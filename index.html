@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>LIVE RESULT</title>
 
@@ -26,22 +26,22 @@ body{
     color:#fff;
 }
 
-/* TOP HEADER */
+/* HEADER */
 .header{
     width:100%;
-    padding:24px 15px 20px;
+    padding:25px 15px 21px;
     text-align:center;
-    background:linear-gradient(145deg,#ff2a2a,#b40000,#680000);
-    border-bottom-left-radius:25px;
-    border-bottom-right-radius:25px;
-    box-shadow:0 8px 25px rgba(255,0,0,.25);
+    background:linear-gradient(145deg,#ff2929,#b40000,#650000);
+    border-bottom-left-radius:26px;
+    border-bottom-right-radius:26px;
+    box-shadow:0 8px 28px rgba(255,0,0,.28);
 }
 
 .header h1{
-    font-size:31px;
+    font-size:32px;
     font-weight:900;
     letter-spacing:2px;
-    text-shadow:0 3px 10px rgba(0,0,0,.4);
+    text-shadow:0 3px 12px rgba(0,0,0,.45);
 }
 
 .header p{
@@ -50,12 +50,13 @@ body{
     opacity:.9;
 }
 
-/* RUNNING TEXT */
+/* RUNNING LINE */
 .ticker{
     width:100%;
     overflow:hidden;
     white-space:nowrap;
     background:#101010;
+    border-top:1px solid #292929;
     border-bottom:1px solid #292929;
     padding:13px 0;
 }
@@ -82,12 +83,12 @@ body{
 .container{
     width:calc(100% - 28px);
     max-width:480px;
-    margin:22px auto;
+    margin:23px auto;
 }
 
-/* LIVE CARD */
+/* CARD */
 .live-card{
-    background:rgba(20,20,20,.95);
+    background:rgba(20,20,20,.96);
     border:1px solid #303030;
     border-radius:22px;
     padding:20px 15px;
@@ -109,7 +110,7 @@ body{
     height:11px;
     background:#00ff66;
     border-radius:50%;
-    box-shadow:0 0 14px #00ff66;
+    box-shadow:0 0 15px #00ff66;
     animation:blink 1s infinite;
 }
 
@@ -120,7 +121,7 @@ body{
     }
 }
 
-/* ITEMS */
+/* RESULT ITEMS */
 .item{
     width:100%;
     display:flex;
@@ -131,7 +132,6 @@ body{
     background:linear-gradient(145deg,#222,#151515);
     border:1px solid #343434;
     border-radius:15px;
-    transition:.2s;
 }
 
 .item-name{
@@ -149,26 +149,68 @@ body{
     border-radius:20px;
 }
 
-/* TELEGRAM */
+/* TELEGRAM SECTION */
+.telegram-box{
+    margin-top:23px;
+    text-align:center;
+}
+
+.join-text{
+    color:#ffd700;
+    font-size:16px;
+    line-height:1.4;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+/* HIGHLIGHTED BUTTON */
 .telegram{
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     width:100%;
-    min-height:54px;
-    margin-top:20px;
-    border-radius:15px;
+    min-height:59px;
+    border-radius:16px;
     text-decoration:none;
     color:#fff;
-    background:linear-gradient(135deg,#20a9ff,#087dcc);
-    font-size:17px;
+    font-size:18px;
     font-weight:900;
-    letter-spacing:.3px;
-    box-shadow:0 7px 22px rgba(0,145,255,.25);
+    letter-spacing:.4px;
+
+    background:linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff,
+        #6a00ff
+    );
+
+    border:2px solid rgba(255,255,255,.28);
+
+    box-shadow:
+        0 0 12px rgba(0,183,255,.65),
+        0 0 28px rgba(106,0,255,.35);
+
+    animation:buttonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes buttonGlow{
+    from{
+        transform:scale(1);
+        box-shadow:
+        0 0 10px rgba(0,183,255,.55),
+        0 0 22px rgba(106,0,255,.3);
+    }
+
+    to{
+        transform:scale(1.02);
+        box-shadow:
+        0 0 20px rgba(0,183,255,.9),
+        0 0 35px rgba(106,0,255,.55);
+    }
 }
 
 .telegram:active{
-    transform:scale(.97);
+    transform:scale(.96);
 }
 
 /* FOOTER */
@@ -176,13 +218,14 @@ body{
     text-align:center;
     color:#777;
     font-size:11px;
-    padding:8px 15px 25px;
+    padding:5px 15px 28px;
 }
 
-/* SMALL MOBILE */
+/* SMALL PHONES */
 @media(max-width:360px){
+
     .header h1{
-        font-size:27px;
+        font-size:28px;
     }
 
     .container{
@@ -191,6 +234,14 @@ body{
 
     .item{
         padding:15px 12px;
+    }
+
+    .join-text{
+        font-size:14px;
+    }
+
+    .telegram{
+        font-size:17px;
     }
 }
 </style>
@@ -204,7 +255,7 @@ body{
     <p>Latest Result Updates</p>
 </header>
 
-<!-- RUNNING LINE -->
+<!-- RUNNING TEXT -->
 <div class="ticker">
     <div class="ticker-track">
         Sridevi &nbsp; • &nbsp;
@@ -219,7 +270,7 @@ body{
     </div>
 </div>
 
-<!-- CONTENT -->
+<!-- MAIN CONTENT -->
 <main class="container">
 
     <section class="live-card">
@@ -249,13 +300,23 @@ body{
             <span class="item-status">LIVE</span>
         </div>
 
-        <!-- TELEGRAM BUTTON -->
-        <a class="telegram"
-           href="https://t.me/+NEJLfwsz1Mk3MmZl"
-           target="_blank"
-           rel="noopener noreferrer">
-            ✈️ TELEGRAM UPDATES
-        </a>
+        <!-- TELEGRAM -->
+        <div class="telegram-box">
+
+            <div class="join-text">
+                Live Result Updates ke liye Telegram par judein
+            </div>
+
+            <a
+                class="telegram"
+                href="https://t.me/+NEJLfwsz1Mk3MmZl"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ✈️ TELEGRAM UPDATES
+            </a>
+
+        </div>
 
     </section>
 
