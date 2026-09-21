@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,5 +136,135 @@ body{
 
 .item-name{
     font-size:17px;
-    font-weight
+    font-weight:800;
+}
+
+.item-status{
+    font-size:11px;
+    font-weight:900;
+    color:#00ff66;
+    background:rgba(0,255,102,.08);
+    border:1px solid rgba(0,255,102,.25);
+    padding:6px 9px;
+    border-radius:20px;
+}
+
+/* TELEGRAM */
+.telegram{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    min-height:54px;
+    margin-top:20px;
+    border-radius:15px;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#20a9ff,#087dcc);
+    font-size:17px;
+    font-weight:900;
+    letter-spacing:.3px;
+    box-shadow:0 7px 22px rgba(0,145,255,.25);
+}
+
+.telegram:active{
+    transform:scale(.97);
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    color:#777;
+    font-size:11px;
+    padding:8px 15px 25px;
+}
+
+/* SMALL MOBILE */
+@media(max-width:360px){
+    .header h1{
+        font-size:27px;
+    }
+
+    .container{
+        width:calc(100% - 20px);
+    }
+
+    .item{
+        padding:15px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h1>LIVE RESULT</h1>
+    <p>Latest Result Updates</p>
+</header>
+
+<!-- RUNNING LINE -->
+<div class="ticker">
+    <div class="ticker-track">
+        Sridevi &nbsp; • &nbsp;
+        Shree Ganesh &nbsp; • &nbsp;
+        Madhur &nbsp; • &nbsp;
+        Main Bazar &nbsp; • &nbsp;
+        LIVE RESULT &nbsp; • &nbsp;
+        Sridevi &nbsp; • &nbsp;
+        Shree Ganesh &nbsp; • &nbsp;
+        Madhur &nbsp; • &nbsp;
+        Main Bazar
+    </div>
+</div>
+
+<!-- CONTENT -->
+<main class="container">
+
+    <section class="live-card">
+
+        <div class="live-heading">
+            <span class="live-dot"></span>
+            LIVE UPDATES
+        </div>
+
+        <div class="item">
+            <span class="item-name">Sridevi</span>
+            <span class="item-status">LIVE</span>
+        </div>
+
+        <div class="item">
+            <span class="item-name">Shree Ganesh</span>
+            <span class="item-status">LIVE</span>
+        </div>
+
+        <div class="item">
+            <span class="item-name">Madhur</span>
+            <span class="item-status">LIVE</span>
+        </div>
+
+        <div class="item">
+            <span class="item-name">Main Bazar</span>
+            <span class="item-status">LIVE</span>
+        </div>
+
+        <!-- TELEGRAM BUTTON -->
+        <a class="telegram"
+           href="https://t.me/+NEJLfwsz1Mk3MmZl"
+           target="_blank"
+           rel="noopener noreferrer">
+            ✈️ TELEGRAM UPDATES
+        </a>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    © 2026 LIVE RESULT • Information & Updates
+</footer>
+
+</body>
+</html>
 ```
