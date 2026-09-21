@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>LIVE RESULT</title>
 
@@ -14,182 +14,127 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#080808;
-    color:#fff;
-    min-height:100vh;
+html,body{
+    width:100%;
+    min-height:100%;
 }
 
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at top,#252525 0%,#0b0b0b 42%,#050505 100%);
+    color:#fff;
+}
+
+/* TOP HEADER */
 .header{
-    background:linear-gradient(135deg,#ff1e1e,#8b0000);
-    padding:22px 15px;
+    width:100%;
+    padding:24px 15px 20px;
     text-align:center;
-    box-shadow:0 0 20px rgba(255,0,0,.45);
+    background:linear-gradient(145deg,#ff2a2a,#b40000,#680000);
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    box-shadow:0 8px 25px rgba(255,0,0,.25);
 }
 
 .header h1{
-    font-size:32px;
+    font-size:31px;
     font-weight:900;
     letter-spacing:2px;
+    text-shadow:0 3px 10px rgba(0,0,0,.4);
 }
 
 .header p{
-    margin-top:6px;
+    margin-top:7px;
     font-size:13px;
     opacity:.9;
 }
 
-/* Running Line */
+/* RUNNING TEXT */
 .ticker{
     width:100%;
     overflow:hidden;
-    background:#111;
-    border-top:1px solid #333;
-    border-bottom:1px solid #333;
-    padding:12px 0;
     white-space:nowrap;
+    background:#101010;
+    border-bottom:1px solid #292929;
+    padding:13px 0;
 }
 
 .ticker-track{
     display:inline-block;
     padding-left:100%;
-    animation:scroll 16s linear infinite;
-    color:#ffd700;
-    font-size:16px;
-    font-weight:bold;
+    animation:run 18s linear infinite;
+    color:#ffd900;
+    font-size:15px;
+    font-weight:800;
 }
 
-@keyframes scroll{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-100%);}
+@keyframes run{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-100%);
+    }
 }
 
+/* MAIN */
 .container{
-    width:92%;
-    max-width:500px;
-    margin:25px auto;
+    width:calc(100% - 28px);
+    max-width:480px;
+    margin:22px auto;
 }
 
-.live-box{
-    background:linear-gradient(145deg,#151515,#090909);
-    border:1px solid #333;
-    border-radius:18px;
-    padding:22px 16px;
-    margin-bottom:16px;
-    box-shadow:0 8px 25px rgba(0,0,0,.5);
+/* LIVE CARD */
+.live-card{
+    background:rgba(20,20,20,.95);
+    border:1px solid #303030;
+    border-radius:22px;
+    padding:20px 15px;
+    box-shadow:0 12px 35px rgba(0,0,0,.55);
 }
 
-.live-title{
+.live-heading{
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:8px;
-    font-size:21px;
-    font-weight:bold;
+    align-items:center;
+    gap:9px;
     margin-bottom:18px;
+    font-size:20px;
+    font-weight:900;
 }
 
-.dot{
-    width:10px;
-    height:10px;
+.live-dot{
+    width:11px;
+    height:11px;
     background:#00ff66;
     border-radius:50%;
-    box-shadow:0 0 12px #00ff66;
+    box-shadow:0 0 14px #00ff66;
     animation:blink 1s infinite;
 }
 
 @keyframes blink{
-    50%{opacity:.3;}
+    50%{
+        opacity:.3;
+        transform:scale(.8);
+    }
 }
 
-.market{
+/* ITEMS */
+.item{
+    width:100%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    background:#1b1b1b;
-    border-radius:12px;
-    padding:15px;
-    margin:10px 0;
-    border:1px solid #292929;
+    justify-content:space-between;
+    padding:17px 15px;
+    margin:11px 0;
+    background:linear-gradient(145deg,#222,#151515);
+    border:1px solid #343434;
+    border-radius:15px;
+    transition:.2s;
 }
 
-.market-name{
+.item-name{
     font-size:17px;
-    font-weight:bold;
-}
-
-.status{
-    color:#00ff66;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.footer{
-    text-align:center;
-    color:#777;
-    font-size:12px;
-    margin:30px 10px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-    <h1>LIVE RESULT</h1>
-    <p>Latest Result Updates</p>
-</div>
-
-<div class="ticker">
-    <div class="ticker-track">
-        Sridevi &nbsp; • &nbsp;
-        Shree Ganesh &nbsp; • &nbsp;
-        Madhur &nbsp; • &nbsp;
-        Main Bazar &nbsp; • &nbsp;
-        LIVE RESULT &nbsp; • &nbsp;
-        Sridevi &nbsp; • &nbsp;
-        Shree Ganesh &nbsp; • &nbsp;
-        Madhur &nbsp; • &nbsp;
-        Main Bazar
-    </div>
-</div>
-
-<div class="container">
-
-    <div class="live-box">
-        <div class="live-title">
-            <span class="dot"></span>
-            LIVE UPDATES
-        </div>
-
-        <div class="market">
-            <span class="market-name">Sridevi</span>
-            <span class="status">LIVE</span>
-        </div>
-
-        <div class="market">
-            <span class="market-name">Shree Ganesh</span>
-            <span class="status">LIVE</span>
-        </div>
-
-        <div class="market">
-            <span class="market-name">Madhur</span>
-            <span class="status">LIVE</span>
-        </div>
-
-        <div class="market">
-            <span class="market-name">Main Bazar</span>
-            <span class="status">LIVE</span>
-        </div>
-    </div>
-
-</div>
-
-<div class="footer">
-    © 2026 LIVE RESULT • Information & Updates
-</div>
-
-</body>
-</html>
+    font-weight
 ```
